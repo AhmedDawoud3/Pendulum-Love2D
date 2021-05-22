@@ -2,16 +2,22 @@ vector = require("vector")
 Class = require 'class'
 require 'Pendulum'
 gravity = 1
-
+pendulums = {}
 function love.load()
     love.window.setMode(600, 800)
     love.window.setTitle('Pendulum')
-    pendulum = Pendulum(vector(300, 0), 300)
+    for i = 1, 100 do
+        pendulums[i] = Pendulum(vector(300, 0), i * 5)
+    end
 end
 function love.update(dt)
-    pendulum:update(gravity)
+    for i, v in ipairs(pendulums) do
+        pendulums[i]:update(gravity)
+    end
 end
 function love.draw()
     love.graphics.clear(0, 0, 0)
-    pendulum:Render()
+    for i, v in ipairs(pendulums) do
+        pendulums[i]:Render()
+    end
 end
