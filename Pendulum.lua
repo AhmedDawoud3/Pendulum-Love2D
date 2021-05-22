@@ -21,8 +21,9 @@ end
 function Pendulum:Render()
     love.graphics.setColor(1, 1, 1, 1)
     love.graphics.line(self.origin.x, self.origin.y, self.bob.x, self.bob.y)
-    love.graphics.circle('fill', self.bob.x, self.bob.y, 64);
+    love.graphics.circle('fill', self.bob.x, self.bob.y, 3);
     love.graphics.setColor(0.8, 0.8, 0.8, 1)
-    love.graphics.setLineWidth(8)
-    love.graphics.circle('line', self.bob.x, self.bob.y, 64);
+    love.graphics.setLineWidth(1)
+    love.graphics.circle('line', self.bob.x, self.bob.y, 3);
+    love.graphics.setLineWidth(0.5)
 end
