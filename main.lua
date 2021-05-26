@@ -6,8 +6,8 @@ pendulums = {}
 function love.load()
     love.window.setMode(600, 800)
     love.window.setTitle('Pendulum')
-    for i = 1, 100 do
-        pendulums[i] = Pendulum(vector(300, 0), i * 5)
+    for i = 1, 50 do
+        pendulums[i] = Pendulum(vector(300, 0), i * 10)
     end
 end
 function love.update(dt)
